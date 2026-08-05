@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo> <!-- setting GenerateAssemblyInfo to false causes this bug https://github.com/dotnet/project-system/issues/3934 -->
+    <TargetFrameworks>net10.0;net9.0;net8.0;net7.0;net6.0;net5.0</TargetFrameworks>
+    <PackageId>HCloudAPI</PackageId>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <Authors>Nick Bromnitz</Authors>
+    <Company>Hetzner Online Gmbh</Company>
+    <AssemblyTitle>HCloudAPI</AssemblyTitle>
+    <Description>A library to easily use the Hetzner Cloud API in .NET Projects.</Description>
+    <Copyright>CC Attribution 4.0 International</Copyright>
+    <RootNamespace>HCloudAPI</RootNamespace>
+    <Version>1.0.0</Version>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HCloudAPI.xml</DocumentationFile>
+    <PackageProjectUrl>https://github.com/hetznercloud</PackageProjectUrl>
+    <RepositoryUrl>https://git.skorplul.de/Skorplul/hcloudapi.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Nothing</PackageReleaseNotes>
+    <Nullable>enable</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.*" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="10.0.*" />
+    <PackageReference Include="PolySharp" Version="1.14.1" PrivateAssets="all" />
+    
+    <None Include="./LICENSE" Pack="true" PackagePath=""/>
+    <None Include="./README.md" Pack="true" PackagePath=""/>
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="10.0.*" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="9.0.*" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="8.0.*" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0' or '$(TargetFramework)' == 'net6.0' or '$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.Net.Http.Headers" Version="2.3.11" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Portable.System.DateTimeOnly" Version="9.0.*" />
+  </ItemGroup>
+  
+</Project>
