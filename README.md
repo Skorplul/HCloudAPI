@@ -1,5 +1,5 @@
 # Hetzner Cloud API .NET Library
-[![.NET Version](https://img.shields.io/badge/dotnet%20versions-net5.0_to_net1.0-blue?style=flat-square)](https://www.nuget.org/packages/HCloudAPI/#supportedframeworks-body-tab)
+[![.NET Version](https://img.shields.io/badge/dotnet%20versions-net5.0_to_net10.0-blue?style=flat-square)](https://www.nuget.org/packages/HCloudAPI/#supportedframeworks-body-tab)
 [![License](https://img.shields.io/github/license/Skorplul/HCloudAPI.svg?style=flat-square)](https://github.com/Skorplul/HCloudAPI/blob/main/LICENSE)
 [![Build](https://github.com/Skorplul/HCloudAPI/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Skorplul/HCloudAPI/actions/workflows/dotnet.yml)
 [![NuGet Downloads](https://img.shields.io/nuget/dt/HCloudAPI)](http://www.nuget.org/packages/HCloudAPI/)

@@ -1,0 +1,6 @@
+- name: Docs
+  href: ./docs/
+- name: API Documentation
+  href: api/
+- name: Repository
+  href: https://github.com/Skorplul/HCloudAPI
