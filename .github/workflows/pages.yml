@@ -24,13 +24,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./docfx
-
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      
     - name: Configure Pages
       uses: actions/configure-pages@v5 
       
@@ -40,6 +37,7 @@ jobs:
         dotnet-version: 10.x
 
     - name: Install and Run DocFX
+      working-directory: ./docfx
       run: |
         dotnet tool update -g docfx
         export PATH="$PATH:$HOME/.dotnet/tools"
@@ -50,6 +48,7 @@ jobs:
       with:
         # Upload entire repository
         path: './_site'
+        
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v5
