@@ -147,50 +147,50 @@ namespace HCloudAPI.Clients
                 return FirewallResponseAppliedToInnerAppliedToResources.TypeEnumToJsonValue(firewallResponseAppliedToInnerAppliedToResourcesInnerTypeEnum);
             if (obj is FloatingIPCreateRequest.TypeEnum floatingIPCreateRequestTypeEnum)
                 return FloatingIPCreateRequest.TypeEnumToJsonValue(floatingIPCreateRequestTypeEnum);
-            if (obj is GetPricingResponsePricingFloatingIpsInner.TypeEnum getPricing200ResponsePricingFloatingIpsInnerTypeEnum)
-                return GetPricingResponsePricingFloatingIpsInner.TypeEnumToJsonValue(getPricing200ResponsePricingFloatingIpsInnerTypeEnum);
-            if (obj is GetPricingResponsePricingPrimaryIpsInner.TypeEnum getPricing200ResponsePricingPrimaryIpsInnerTypeEnum)
-                return GetPricingResponsePricingPrimaryIpsInner.TypeEnumToJsonValue(getPricing200ResponsePricingPrimaryIpsInnerTypeEnum);
-            if (obj is ListFloatingIpsResponseFloatingIpsInner.TypeEnum listFloatingIps200ResponseFloatingIpsInnerTypeEnum)
-                return ListFloatingIpsResponseFloatingIpsInner.TypeEnumToJsonValue(listFloatingIps200ResponseFloatingIpsInnerTypeEnum);
-            if (obj is ListImagesResponseImagesInner.TypeEnum listImages200ResponseImagesInnerTypeEnum)
-                return ListImagesResponseImagesInner.TypeEnumToJsonValue(listImages200ResponseImagesInnerTypeEnum);
-            if (obj is ListImagesResponseImagesInner.StatusEnum listImages200ResponseImagesInnerStatusEnum)
-                return ListImagesResponseImagesInner.StatusEnumToJsonValue(listImages200ResponseImagesInnerStatusEnum);
-            if (obj is ListImagesResponseImagesInner.OsFlavorEnum listImages200ResponseImagesInnerOsFlavorEnum)
-                return ListImagesResponseImagesInner.OsFlavorEnumToJsonValue(listImages200ResponseImagesInnerOsFlavorEnum);
-            if (obj is ListImagesResponseImagesInner.ArchitectureEnum listImages200ResponseImagesInnerArchitectureEnum)
-                return ListImagesResponseImagesInner.ArchitectureEnumToJsonValue(listImages200ResponseImagesInnerArchitectureEnum);
-            if (obj is ListIsosResponseIsosInner.TypeEnum listIsos200ResponseIsosInnerTypeEnum)
-                return ListIsosResponseIsosInner.TypeEnumToJsonValue(listIsos200ResponseIsosInnerTypeEnum);
-            if (obj is ListIsosResponseIsosInner.ArchitectureEnum listIsos200ResponseIsosInnerArchitectureEnum)
-                return ListIsosResponseIsosInner.ArchitectureEnumToJsonValue(listIsos200ResponseIsosInnerArchitectureEnum);
-            if (obj is ListLoadBalancersResponseLoadBalancersInnerAlgorithm.TypeEnum listLoadBalancers200ResponseLoadBalancersInnerAlgorithmTypeEnum)
-                return ListLoadBalancersResponseLoadBalancersInnerAlgorithm.TypeEnumToJsonValue(listLoadBalancers200ResponseLoadBalancersInnerAlgorithmTypeEnum);
-            if (obj is ListNetworksResponseNetworksInnerSubnetsInner.TypeEnum listNetworks200ResponseNetworksInnerSubnetsInnerTypeEnum)
-                return ListNetworksResponseNetworksInnerSubnetsInner.TypeEnumToJsonValue(listNetworks200ResponseNetworksInnerSubnetsInnerTypeEnum);
-            if (obj is ListServerTypesResponseServerTypesInner.StorageTypeEnum listServerTypes200ResponseServerTypesInnerStorageTypeEnum)
-                return ListServerTypesResponseServerTypesInner.StorageTypeEnumToJsonValue(listServerTypes200ResponseServerTypesInnerStorageTypeEnum);
-            if (obj is ListServerTypesResponseServerTypesInner.CpuTypeEnum listServerTypes200ResponseServerTypesInnerCpuTypeEnum)
-                return ListServerTypesResponseServerTypesInner.CpuTypeEnumToJsonValue(listServerTypes200ResponseServerTypesInnerCpuTypeEnum);
-            if (obj is ListServerTypesResponseServerTypesInner.ArchitectureEnum listServerTypes200ResponseServerTypesInnerArchitectureEnum)
-                return ListServerTypesResponseServerTypesInner.ArchitectureEnumToJsonValue(listServerTypes200ResponseServerTypesInnerArchitectureEnum);
-            if (obj is ListServersResponseServersInner.StatusEnum listServers200ResponseServersInnerStatusEnum)
-                return ListServersResponseServersInner.StatusEnumToJsonValue(listServers200ResponseServersInnerStatusEnum);
-            if (obj is ListServersResponseServersInnerImage.TypeEnum listServers200ResponseServersInnerImageTypeEnum)
-                return ListServersResponseServersInnerImage.TypeEnumToJsonValue(listServers200ResponseServersInnerImageTypeEnum);
-            if (obj is ListServersResponseServersInnerImage.StatusEnum listServers200ResponseServersInnerImageStatusEnum)
-                return ListServersResponseServersInnerImage.StatusEnumToJsonValue(listServers200ResponseServersInnerImageStatusEnum);
-            if (obj is ListServersResponseServersInnerImage.OsFlavorEnum listServers200ResponseServersInnerImageOsFlavorEnum)
-                return ListServersResponseServersInnerImage.OsFlavorEnumToJsonValue(listServers200ResponseServersInnerImageOsFlavorEnum);
-            if (obj is ListServersResponseServersInnerImage.ArchitectureEnum listServers200ResponseServersInnerImageArchitectureEnum)
-                return ListServersResponseServersInnerImage.ArchitectureEnumToJsonValue(listServers200ResponseServersInnerImageArchitectureEnum);
-            if (obj is ListServersResponseServersInnerIso.TypeEnum listServers200ResponseServersInnerIsoTypeEnum)
-                return ListServersResponseServersInnerIso.TypeEnumToJsonValue(listServers200ResponseServersInnerIsoTypeEnum);
-            if (obj is ListServersResponseServersInnerIso.ArchitectureEnum listServers200ResponseServersInnerIsoArchitectureEnum)
-                return ListServersResponseServersInnerIso.ArchitectureEnumToJsonValue(listServers200ResponseServersInnerIsoArchitectureEnum);
-            if (obj is ListVolumesResponseVolumesInner.StatusEnum listVolumes200ResponseVolumesInnerStatusEnum)
-                return ListVolumesResponseVolumesInner.StatusEnumToJsonValue(listVolumes200ResponseVolumesInnerStatusEnum);
+            if (obj is GetPricingResponsePricingFloatingIpsInner.TypeEnum getPricingResponsePricingFloatingIpsInnerTypeEnum)
+                return GetPricingResponsePricingFloatingIpsInner.TypeEnumToJsonValue(getPricingResponsePricingFloatingIpsInnerTypeEnum);
+            if (obj is GetPricingResponsePricingPrimaryIpsInner.TypeEnum getPricingResponsePricingPrimaryIpsInnerTypeEnum)
+                return GetPricingResponsePricingPrimaryIpsInner.TypeEnumToJsonValue(getPricingResponsePricingPrimaryIpsInnerTypeEnum);
+            if (obj is ListFloatingIpsResponseFloatingIpsInner.TypeEnum listFloatingIpsResponseFloatingIpsInnerTypeEnum)
+                return ListFloatingIpsResponseFloatingIpsInner.TypeEnumToJsonValue(listFloatingIpsResponseFloatingIpsInnerTypeEnum);
+            if (obj is ListImagesResponseImagesInner.TypeEnum listImagesResponseImagesInnerTypeEnum)
+                return ListImagesResponseImagesInner.TypeEnumToJsonValue(listImagesResponseImagesInnerTypeEnum);
+            if (obj is ListImagesResponseImagesInner.StatusEnum listImagesResponseImagesInnerStatusEnum)
+                return ListImagesResponseImagesInner.StatusEnumToJsonValue(listImagesResponseImagesInnerStatusEnum);
+            if (obj is ListImagesResponseImagesInner.OsFlavorEnum listImagesResponseImagesInnerOsFlavorEnum)
+                return ListImagesResponseImagesInner.OsFlavorEnumToJsonValue(listImagesResponseImagesInnerOsFlavorEnum);
+            if (obj is ListImagesResponseImagesInner.ArchitectureEnum listImagesResponseImagesInnerArchitectureEnum)
+                return ListImagesResponseImagesInner.ArchitectureEnumToJsonValue(listImagesResponseImagesInnerArchitectureEnum);
+            if (obj is ListIsosResponseIsosInner.TypeEnum listIsosResponseIsosInnerTypeEnum)
+                return ListIsosResponseIsosInner.TypeEnumToJsonValue(listIsosResponseIsosInnerTypeEnum);
+            if (obj is ListIsosResponseIsosInner.ArchitectureEnum listIsosResponseIsosInnerArchitectureEnum)
+                return ListIsosResponseIsosInner.ArchitectureEnumToJsonValue(listIsosResponseIsosInnerArchitectureEnum);
+            if (obj is ListLoadBalancersResponseLoadBalancersInnerAlgorithm.TypeEnum listLoadBalancersResponseLoadBalancersInnerAlgorithmTypeEnum)
+                return ListLoadBalancersResponseLoadBalancersInnerAlgorithm.TypeEnumToJsonValue(listLoadBalancersResponseLoadBalancersInnerAlgorithmTypeEnum);
+            if (obj is ListNetworksResponseNetworksInnerSubnetsInner.TypeEnum listNetworksResponseNetworksInnerSubnetsInnerTypeEnum)
+                return ListNetworksResponseNetworksInnerSubnetsInner.TypeEnumToJsonValue(listNetworksResponseNetworksInnerSubnetsInnerTypeEnum);
+            if (obj is ListServerTypesResponseServerTypesInner.StorageTypeEnum listServerTypesResponseServerTypesInnerStorageTypeEnum)
+                return ListServerTypesResponseServerTypesInner.StorageTypeEnumToJsonValue(listServerTypesResponseServerTypesInnerStorageTypeEnum);
+            if (obj is ListServerTypesResponseServerTypesInner.CpuTypeEnum listServerTypesResponseServerTypesInnerCpuTypeEnum)
+                return ListServerTypesResponseServerTypesInner.CpuTypeEnumToJsonValue(listServerTypesResponseServerTypesInnerCpuTypeEnum);
+            if (obj is ListServerTypesResponseServerTypesInner.ArchitectureEnum listServerTypesResponseServerTypesInnerArchitectureEnum)
+                return ListServerTypesResponseServerTypesInner.ArchitectureEnumToJsonValue(listServerTypesResponseServerTypesInnerArchitectureEnum);
+            if (obj is ListServersResponseServersInner.StatusEnum listServersResponseServersInnerStatusEnum)
+                return ListServersResponseServersInner.StatusEnumToJsonValue(listServersResponseServersInnerStatusEnum);
+            if (obj is ListServersResponseServersInnerImage.TypeEnum listServersResponseServersInnerImageTypeEnum)
+                return ListServersResponseServersInnerImage.TypeEnumToJsonValue(listServersResponseServersInnerImageTypeEnum);
+            if (obj is ListServersResponseServersInnerImage.StatusEnum listServersResponseServersInnerImageStatusEnum)
+                return ListServersResponseServersInnerImage.StatusEnumToJsonValue(listServersResponseServersInnerImageStatusEnum);
+            if (obj is ListServersResponseServersInnerImage.OsFlavorEnum listServersResponseServersInnerImageOsFlavorEnum)
+                return ListServersResponseServersInnerImage.OsFlavorEnumToJsonValue(listServersResponseServersInnerImageOsFlavorEnum);
+            if (obj is ListServersResponseServersInnerImage.ArchitectureEnum listServersResponseServersInnerImageArchitectureEnum)
+                return ListServersResponseServersInnerImage.ArchitectureEnumToJsonValue(listServersResponseServersInnerImageArchitectureEnum);
+            if (obj is ListServersResponseServersInnerIso.TypeEnum listServersResponseServersInnerIsoTypeEnum)
+                return ListServersResponseServersInnerIso.TypeEnumToJsonValue(listServersResponseServersInnerIsoTypeEnum);
+            if (obj is ListServersResponseServersInnerIso.ArchitectureEnum listServersResponseServersInnerIsoArchitectureEnum)
+                return ListServersResponseServersInnerIso.ArchitectureEnumToJsonValue(listServersResponseServersInnerIsoArchitectureEnum);
+            if (obj is ListVolumesResponseVolumesInner.StatusEnum listVolumesResponseVolumesInnerStatusEnum)
+                return ListVolumesResponseVolumesInner.StatusEnumToJsonValue(listVolumesResponseVolumesInnerStatusEnum);
             if (obj is LoadBalancerAlgorithm.TypeEnum loadBalancerAlgorithmTypeEnum)
                 return LoadBalancerAlgorithm.TypeEnumToJsonValue(loadBalancerAlgorithmTypeEnum);
             if (obj is LoadBalancerService.ProtocolEnum loadBalancerServiceProtocolEnum)

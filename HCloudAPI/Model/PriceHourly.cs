@@ -88,14 +88,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="PriceHourly" />
     /// </summary>
-    public partial class ListLoadBalancerTypes200ResponseLoadBalancerTypesInnerPricesInnerPriceHourlyJsonConverter : JsonConverter<PriceHourly>
+    public partial class ListLoadBalancerTypesResponseLoadBalancerTypesInnerPricesInnerPriceHourlyJsonConverter : JsonConverter<PriceHourly>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListLoadBalancerTypes200ResponseLoadBalancerTypesInnerPricesInnerPriceHourlyJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListLoadBalancerTypesResponseLoadBalancerTypesInnerPricesInnerPriceHourlyJsonConverter" /> class.
         /// </summary>
-        public ListLoadBalancerTypes200ResponseLoadBalancerTypesInnerPricesInnerPriceHourlyJsonConverter()
+        public ListLoadBalancerTypesResponseLoadBalancerTypesInnerPricesInnerPriceHourlyJsonConverter()
         {
             OnCreated();
         }

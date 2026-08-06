@@ -185,14 +185,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListVolumesResponseVolumesInnerLocation" />
     /// </summary>
-    public partial class ListVolumes200ResponseVolumesInnerLocationJsonConverter : JsonConverter<ListVolumesResponseVolumesInnerLocation>
+    public partial class ListVolumesResponseVolumesInnerLocationJsonConverter : JsonConverter<ListVolumesResponseVolumesInnerLocation>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListVolumes200ResponseVolumesInnerLocationJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListVolumesResponseVolumesInnerLocationJsonConverter" /> class.
         /// </summary>
-        public ListVolumes200ResponseVolumesInnerLocationJsonConverter()
+        public ListVolumesResponseVolumesInnerLocationJsonConverter()
         {
             OnCreated();
         }

@@ -146,14 +146,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetDatacenterResponseDatacenter" />
     /// </summary>
-    public partial class GetDatacenter200ResponseDatacenterJsonConverter : JsonConverter<GetDatacenterResponseDatacenter>
+    public partial class GetDatacenterResponseDatacenterJsonConverter : JsonConverter<GetDatacenterResponseDatacenter>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetDatacenter200ResponseDatacenterJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetDatacenterResponseDatacenterJsonConverter" /> class.
         /// </summary>
-        public GetDatacenter200ResponseDatacenterJsonConverter()
+        public GetDatacenterResponseDatacenterJsonConverter()
         {
             OnCreated();
         }

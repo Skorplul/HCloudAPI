@@ -74,14 +74,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetIsoResponse" />
     /// </summary>
-    public partial class GetIso200ResponseJsonConverter : JsonConverter<GetIsoResponse>
+    public partial class GetIsoResponseJsonConverter : JsonConverter<GetIsoResponse>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetIso200ResponseJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetIsoResponseJsonConverter" /> class.
         /// </summary>
-        public GetIso200ResponseJsonConverter()
+        public GetIsoResponseJsonConverter()
         {
             OnCreated();
         }

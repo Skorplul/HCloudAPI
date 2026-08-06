@@ -87,14 +87,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListServersResponseServersInnerProtection" />
     /// </summary>
-    public partial class ListServers200ResponseServersInnerProtectionJsonConverter : JsonConverter<ListServersResponseServersInnerProtection>
+    public partial class ListServersResponseServersInnerProtectionJsonConverter : JsonConverter<ListServersResponseServersInnerProtection>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListServers200ResponseServersInnerProtectionJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListServersResponseServersInnerProtectionJsonConverter" /> class.
         /// </summary>
-        public ListServers200ResponseServersInnerProtectionJsonConverter()
+        public ListServersResponseServersInnerProtectionJsonConverter()
         {
             OnCreated();
         }

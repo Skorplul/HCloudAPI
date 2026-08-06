@@ -208,14 +208,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListNetworksResponseNetworksInner" />
     /// </summary>
-    public partial class ListNetworks200ResponseNetworksInnerJsonConverter : JsonConverter<ListNetworksResponseNetworksInner>
+    public partial class ListNetworksResponseNetworksInnerJsonConverter : JsonConverter<ListNetworksResponseNetworksInner>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListNetworks200ResponseNetworksInnerJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListNetworksResponseNetworksInnerJsonConverter" /> class.
         /// </summary>
-        public ListNetworks200ResponseNetworksInnerJsonConverter()
+        public ListNetworksResponseNetworksInnerJsonConverter()
         {
             OnCreated();
         }

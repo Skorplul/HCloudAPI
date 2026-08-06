@@ -185,14 +185,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListFloatingIpsResponseFloatingIpsInnerHomeLocation" />
     /// </summary>
-    public partial class ListFloatingIps200ResponseFloatingIpsInnerHomeLocationJsonConverter : JsonConverter<ListFloatingIpsResponseFloatingIpsInnerHomeLocation>
+    public partial class ListFloatingIpsResponseFloatingIpsInnerHomeLocationJsonConverter : JsonConverter<ListFloatingIpsResponseFloatingIpsInnerHomeLocation>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListFloatingIps200ResponseFloatingIpsInnerHomeLocationJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListFloatingIpsResponseFloatingIpsInnerHomeLocationJsonConverter" /> class.
         /// </summary>
-        public ListFloatingIps200ResponseFloatingIpsInnerHomeLocationJsonConverter()
+        public ListFloatingIpsResponseFloatingIpsInnerHomeLocationJsonConverter()
         {
             OnCreated();
         }

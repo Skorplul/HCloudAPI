@@ -143,14 +143,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListSshKeysResponseSshKeysInner" />
     /// </summary>
-    public partial class ListSshKeys200ResponseSshKeysInnerJsonConverter : JsonConverter<ListSshKeysResponseSshKeysInner>
+    public partial class ListSshKeysResponseSshKeysInnerJsonConverter : JsonConverter<ListSshKeysResponseSshKeysInner>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListSshKeys200ResponseSshKeysInnerJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListSshKeysResponseSshKeysInnerJsonConverter" /> class.
         /// </summary>
-        public ListSshKeys200ResponseSshKeysInnerJsonConverter()
+        public ListSshKeysResponseSshKeysInnerJsonConverter()
         {
             OnCreated();
         }

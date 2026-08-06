@@ -91,14 +91,14 @@ $TTL	3600
     /// <summary>
     /// A Json converter for type <see cref="GetZoneZonefileResponse" />
     /// </summary>
-    public partial class GetZoneZonefile200ResponseJsonConverter : JsonConverter<GetZoneZonefileResponse>
+    public partial class GetZoneZonefileResponseJsonConverter : JsonConverter<GetZoneZonefileResponse>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetZoneZonefile200ResponseJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetZoneZonefileResponseJsonConverter" /> class.
         /// </summary>
-        public GetZoneZonefile200ResponseJsonConverter()
+        public GetZoneZonefileResponseJsonConverter()
         {
             OnCreated();
         }

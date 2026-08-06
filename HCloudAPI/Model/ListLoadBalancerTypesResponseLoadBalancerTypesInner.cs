@@ -173,14 +173,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListLoadBalancerTypesResponseLoadBalancerTypesInner" />
     /// </summary>
-    public partial class ListLoadBalancerTypes200ResponseLoadBalancerTypesInnerJsonConverter : JsonConverter<ListLoadBalancerTypesResponseLoadBalancerTypesInner>
+    public partial class ListLoadBalancerTypesResponseLoadBalancerTypesInnerJsonConverter : JsonConverter<ListLoadBalancerTypesResponseLoadBalancerTypesInner>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListLoadBalancerTypes200ResponseLoadBalancerTypesInnerJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListLoadBalancerTypesResponseLoadBalancerTypesInnerJsonConverter" /> class.
         /// </summary>
-        public ListLoadBalancerTypes200ResponseLoadBalancerTypesInnerJsonConverter()
+        public ListLoadBalancerTypesResponseLoadBalancerTypesInnerJsonConverter()
         {
             OnCreated();
         }

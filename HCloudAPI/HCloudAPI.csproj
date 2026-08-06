@@ -5,22 +5,23 @@
     <PackageId>HCloudAPI</PackageId>
     <OutputType>Library</OutputType>
     <LangVersion>latest</LangVersion>
-    <Authors>Nick Bromnitz</Authors>
+    <Authors>Skorplul</Authors>
     <Company>Hetzner Online Gmbh</Company>
     <AssemblyTitle>HCloudAPI</AssemblyTitle>
     <Description>A library to easily use the Hetzner Cloud API in .NET Projects.</Description>
-    <Copyright>CC Attribution 4.0 International</Copyright>
+    <Copyright>CC-BY-4.0 International</Copyright>
     <RootNamespace>HCloudAPI</RootNamespace>
     <Version>1.0.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HCloudAPI.xml</DocumentationFile>
-    <PackageProjectUrl>https://github.com/hetznercloud</PackageProjectUrl>
-    <RepositoryUrl>https://git.skorplul.de/Skorplul/hcloudapi.git</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Skorplul/HCloudAPI</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Skorplul/HCloudAPI.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Nothing</PackageReleaseNotes>
     <Nullable>enable</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,8 +30,8 @@
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="10.0.*" />
     <PackageReference Include="PolySharp" Version="1.14.1" PrivateAssets="all" />
     
-    <None Include="./LICENSE" Pack="true" PackagePath=""/>
-    <None Include="./README.md" Pack="true" PackagePath=""/>
+    <None Include="../LICENSE" Pack="true" PackagePath=""/>
+    <None Include="../README.md" Pack="true" PackagePath=""/>
   </ItemGroup>
   
   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">

@@ -90,14 +90,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListFloatingIpActionsResponse" />
     /// </summary>
-    public partial class ListFloatingIpActions200ResponseJsonConverter : JsonConverter<ListFloatingIpActionsResponse>
+    public partial class ListFloatingIpActionsResponseJsonConverter : JsonConverter<ListFloatingIpActionsResponse>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListFloatingIpActions200ResponseJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListFloatingIpActionsResponseJsonConverter" /> class.
         /// </summary>
-        public ListFloatingIpActions200ResponseJsonConverter()
+        public ListFloatingIpActionsResponseJsonConverter()
         {
             OnCreated();
         }

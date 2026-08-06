@@ -39,7 +39,7 @@ namespace HCloudAPI
             }).Build();
 
         /// <summary>
-        /// <see cref="IActionsApi"/>>
+        /// <see cref="IActionsApi"/>
         /// </summary>
         public IActionsApi ActionsApi {
             get => HostBuild.Services.GetRequiredService<IActionsApi>();
@@ -55,7 +55,7 @@ namespace HCloudAPI
         }
         
         /// <summary>
-        /// <see cref="ICertificatesApi"/>>
+        /// <see cref="ICertificatesApi"/>
         /// </summary>
         public ICertificatesApi CertificatesApi { 
             get => HostBuild.Services.GetRequiredService<ICertificatesApi>();

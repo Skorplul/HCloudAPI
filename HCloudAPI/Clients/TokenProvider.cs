@@ -10,9 +10,8 @@
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using HCloudAPI.Clients;
 
-namespace HCloudAPI
+namespace HCloudAPI.Clients
 {
     /// <summary>
     /// A class which will provide tokens.

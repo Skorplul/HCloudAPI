@@ -81,14 +81,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetZoneResponse" />
     /// </summary>
-    public partial class GetZone200ResponseJsonConverter : JsonConverter<GetZoneResponse>
+    public partial class GetZoneResponseJsonConverter : JsonConverter<GetZoneResponse>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetZone200ResponseJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetZoneResponseJsonConverter" /> class.
         /// </summary>
-        public GetZone200ResponseJsonConverter()
+        public GetZoneResponseJsonConverter()
         {
             OnCreated();
         }

@@ -88,14 +88,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetPricingResponsePricingImagePricePerGbMonth" />
     /// </summary>
-    public partial class GetPricing200ResponsePricingImagePricePerGbMonthJsonConverter : JsonConverter<GetPricingResponsePricingImagePricePerGbMonth>
+    public partial class GetPricingResponsePricingImagePricePerGbMonthJsonConverter : JsonConverter<GetPricingResponsePricingImagePricePerGbMonth>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetPricing200ResponsePricingImagePricePerGbMonthJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetPricingResponsePricingImagePricePerGbMonthJsonConverter" /> class.
         /// </summary>
-        public GetPricing200ResponsePricingImagePricePerGbMonthJsonConverter()
+        public GetPricingResponsePricingImagePricePerGbMonthJsonConverter()
         {
             OnCreated();
         }

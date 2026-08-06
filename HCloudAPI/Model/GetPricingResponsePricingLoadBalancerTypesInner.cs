@@ -97,14 +97,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetPricingResponsePricingLoadBalancerTypesInner" />
     /// </summary>
-    public partial class GetPricing200ResponsePricingLoadBalancerTypesInnerJsonConverter : JsonConverter<GetPricingResponsePricingLoadBalancerTypesInner>
+    public partial class GetPricingResponsePricingLoadBalancerTypesInnerJsonConverter : JsonConverter<GetPricingResponsePricingLoadBalancerTypesInner>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetPricing200ResponsePricingLoadBalancerTypesInnerJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetPricingResponsePricingLoadBalancerTypesInnerJsonConverter" /> class.
         /// </summary>
-        public GetPricing200ResponsePricingLoadBalancerTypesInnerJsonConverter()
+        public GetPricingResponsePricingLoadBalancerTypesInnerJsonConverter()
         {
             OnCreated();
         }

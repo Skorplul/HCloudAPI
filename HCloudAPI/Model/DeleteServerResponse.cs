@@ -81,14 +81,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="DeleteServerResponse" />
     /// </summary>
-    public partial class DeleteServer200ResponseJsonConverter : JsonConverter<DeleteServerResponse>
+    public partial class DeleteServerResponseJsonConverter : JsonConverter<DeleteServerResponse>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DeleteServer200ResponseJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="DeleteServerResponseJsonConverter" /> class.
         /// </summary>
-        public DeleteServer200ResponseJsonConverter()
+        public DeleteServerResponseJsonConverter()
         {
             OnCreated();
         }

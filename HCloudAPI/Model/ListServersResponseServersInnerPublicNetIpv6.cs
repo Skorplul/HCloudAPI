@@ -127,14 +127,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="ListServersResponseServersInnerPublicNetIpv6" />
     /// </summary>
-    public partial class ListServers200ResponseServersInnerPublicNetIpv6JsonConverter : JsonConverter<ListServersResponseServersInnerPublicNetIpv6>
+    public partial class ListServersResponseServersInnerPublicNetIpv6JsonConverter : JsonConverter<ListServersResponseServersInnerPublicNetIpv6>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListServers200ResponseServersInnerPublicNetIpv6JsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="ListServersResponseServersInnerPublicNetIpv6JsonConverter" /> class.
         /// </summary>
-        public ListServers200ResponseServersInnerPublicNetIpv6JsonConverter()
+        public ListServersResponseServersInnerPublicNetIpv6JsonConverter()
         {
             OnCreated();
         }

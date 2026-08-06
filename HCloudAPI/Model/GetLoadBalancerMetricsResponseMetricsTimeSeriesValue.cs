@@ -75,14 +75,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetLoadBalancerMetricsResponseMetricsTimeSeriesValue" />
     /// </summary>
-    public partial class GetLoadBalancerMetrics200ResponseMetricsTimeSeriesValueJsonConverter : JsonConverter<GetLoadBalancerMetricsResponseMetricsTimeSeriesValue>
+    public partial class GetLoadBalancerMetricsResponseMetricsTimeSeriesValueJsonConverter : JsonConverter<GetLoadBalancerMetricsResponseMetricsTimeSeriesValue>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetLoadBalancerMetrics200ResponseMetricsTimeSeriesValueJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetLoadBalancerMetricsResponseMetricsTimeSeriesValueJsonConverter" /> class.
         /// </summary>
-        public GetLoadBalancerMetrics200ResponseMetricsTimeSeriesValueJsonConverter()
+        public GetLoadBalancerMetricsResponseMetricsTimeSeriesValueJsonConverter()
         {
             OnCreated();
         }

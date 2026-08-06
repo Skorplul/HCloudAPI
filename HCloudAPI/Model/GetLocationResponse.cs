@@ -81,14 +81,14 @@ namespace HCloudAPI.Model
     /// <summary>
     /// A Json converter for type <see cref="GetLocationResponse" />
     /// </summary>
-    public partial class GetLocation200ResponseJsonConverter : JsonConverter<GetLocationResponse>
+    public partial class GetLocationResponseJsonConverter : JsonConverter<GetLocationResponse>
     {
         partial void OnCreated();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetLocation200ResponseJsonConverter" /> class.
+        /// Initializes a new instance of the <see cref="GetLocationResponseJsonConverter" /> class.
         /// </summary>
-        public GetLocation200ResponseJsonConverter()
+        public GetLocationResponseJsonConverter()
         {
             OnCreated();
         }
