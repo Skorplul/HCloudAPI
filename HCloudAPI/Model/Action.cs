@@ -3,7 +3,7 @@
  * Hetzner Cloud API
  *
  * # This is the .NET Library for the Hetzner Cloud API. 
- * The version of the OpenAPI document: 1.0.0
+
  */
 
 #nullable enable
