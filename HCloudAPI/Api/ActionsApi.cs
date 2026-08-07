@@ -19,9 +19,11 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text.Json;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using HCloudAPI.Clients;
 using HCloudAPI.Logging;
 using HCloudAPI.Model;
+using Action = HCloudAPI.Model.Action;
 
 namespace HCloudAPI.Api
 {
@@ -81,6 +83,20 @@ namespace HCloudAPI.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetActionsApiResponse"/>?&gt;</returns>
         Task<IGetActionsApiResponse?> GetActionsOrDefaultAsync(List<long> id, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Wait for a given action to finish
+        /// </summary>
+        /// <param name="action">The Action to be waited for</param>
+        /// <returns>The <see cref="HCloudAPI.Model.Action.StatusEnum"/> of the waited for action</returns>
+        Task<Action.StatusEnum?> WaitForAction(Action action);
+
+        /// <summary>
+        /// Wait for a given list of actions to finish
+        /// </summary>
+        /// <param name="Actions">The <see cref="List{Action}"/> of Actions to be waited for.</param>
+        /// <returns>A <see cref="Dictionary{Action, StatusEnum}"/> that were checked. The Status can be null, which indicates if the Action could be checked successfully or not.</returns>
+        Task<Dictionary<Action, Action.StatusEnum?>?> WaitForActions(List<Action> Actions);
     }
 
     /// <summary>
@@ -731,7 +747,11 @@ namespace HCloudAPI.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public GetActionsApiResponse(ILogger<ActionsApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
+            public GetActionsApiResponse(ILogger<ActionsApi> logger,
+                System.Net.Http.HttpRequestMessage httpRequestMessage,
+                System.Net.Http.HttpResponseMessage httpResponseMessage, string rawContent, string path,
+                DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(
+                httpRequestMessage, httpResponseMessage, rawContent, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
@@ -747,13 +767,18 @@ namespace HCloudAPI.Api
             /// <param name="path"></param>
             /// <param name="requestedAt"></param>
             /// <param name="jsonSerializerOptions"></param>
-            public GetActionsApiResponse(ILogger<ActionsApi> logger, System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path, DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
+            public GetActionsApiResponse(ILogger<ActionsApi> logger,
+                System.Net.Http.HttpRequestMessage httpRequestMessage,
+                System.Net.Http.HttpResponseMessage httpResponseMessage, System.IO.Stream contentStream, string path,
+                DateTime requestedAt, System.Text.Json.JsonSerializerOptions jsonSerializerOptions) : base(
+                httpRequestMessage, httpResponseMessage, contentStream, path, requestedAt, jsonSerializerOptions)
             {
                 Logger = logger;
                 OnCreated(httpRequestMessage, httpResponseMessage);
             }
 
-            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage, System.Net.Http.HttpResponseMessage httpResponseMessage);
+            partial void OnCreated(global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+                System.Net.Http.HttpResponseMessage httpResponseMessage);
 
             /// <summary>
             /// Returns true if the response is 200 Ok
@@ -769,7 +794,8 @@ namespace HCloudAPI.Api
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsOk
-                    ? System.Text.Json.JsonSerializer.Deserialize<ActionListResponse>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<ActionListResponse>(RawContent,
+                        _jsonSerializerOptions)
                     : null;
             }
 
@@ -778,14 +804,15 @@ namespace HCloudAPI.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryOk([NotNullWhen(true)]out ActionListResponse? result)
+            public bool TryOk([NotNullWhen(true)] out ActionListResponse? result)
             {
                 result = null;
 
                 try
                 {
                     result = Ok();
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)200);
                 }
@@ -814,7 +841,8 @@ namespace HCloudAPI.Api
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsHttpStatusCode4XX
-                    ? System.Text.Json.JsonSerializer.Deserialize<GetActions4xxResponse>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<GetActions4xxResponse>(RawContent,
+                        _jsonSerializerOptions)
                     : null;
             }
 
@@ -823,14 +851,15 @@ namespace HCloudAPI.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryHttpStatusCode4XX([NotNullWhen(true)]out GetActions4xxResponse? result)
+            public bool TryHttpStatusCode4XX([NotNullWhen(true)] out GetActions4xxResponse? result)
             {
                 result = null;
 
                 try
                 {
                     result = HttpStatusCode4XX();
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)4);
                 }
@@ -859,7 +888,8 @@ namespace HCloudAPI.Api
             {
                 // This logic may be modified with the AsModel.mustache template
                 return IsHttpStatusCode5XX
-                    ? System.Text.Json.JsonSerializer.Deserialize<GetActions5xxResponse>(RawContent, _jsonSerializerOptions)
+                    ? System.Text.Json.JsonSerializer.Deserialize<GetActions5xxResponse>(RawContent,
+                        _jsonSerializerOptions)
                     : null;
             }
 
@@ -868,14 +898,15 @@ namespace HCloudAPI.Api
             /// </summary>
             /// <param name="result"></param>
             /// <returns></returns>
-            public bool TryHttpStatusCode5XX([NotNullWhen(true)]out GetActions5xxResponse? result)
+            public bool TryHttpStatusCode5XX([NotNullWhen(true)] out GetActions5xxResponse? result)
             {
                 result = null;
 
                 try
                 {
                     result = HttpStatusCode5XX();
-                } catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     OnDeserializationErrorDefaultImplementation(e, (HttpStatusCode)5);
                 }
@@ -888,10 +919,79 @@ namespace HCloudAPI.Api
                 bool suppressDefaultLog = false;
                 OnDeserializationError(ref suppressDefaultLog, exception, httpStatusCode);
                 if (!suppressDefaultLog)
-                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception, "An error occurred while deserializing the {code} response.", httpStatusCode);
+                    Logger.LogError(RestLogEvents.ApiDeserializationFailed, exception,
+                        "An error occurred while deserializing the {code} response.", httpStatusCode);
             }
 
-            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
+            partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception,
+                HttpStatusCode httpStatusCode);
         }
+        
+        /// <summary>
+            /// Wait for a given action to finish
+            /// </summary>
+            /// <param name="action">The Action to be waited for</param>
+            /// <returns>The <see cref="HCloudAPI.Model.Action.StatusEnum"/> of the waited for action</returns>
+            public async Task<Action.StatusEnum?> WaitForAction(Action action)
+            {
+                var response = await GetActionAsync(action.Id);
+                var model = response.Ok();
+
+                if (model == null)
+                {
+                    Logger.Log(LogLevel.Error, "Could not get the specified action.", [action, response, model]);
+                    return null;
+                }
+
+                while (model!.Action.Status == Action.StatusEnum.Running)
+                {
+                    response = await GetActionAsync(action.Id);
+                    model = response.Ok();
+                    Task.Delay(750).Wait();
+                }
+
+                return action.Status;
+            }
+
+            /// <summary>
+            /// Wait for a given list of actions to finish
+            /// </summary>
+            /// <param name="Actions">The <see cref="List{Action}"/> of Actions to be waited for.</param>
+            /// <returns>A <see cref="Dictionary{Action, StatusEnum}"/> that were checked. The Status can be null, which indicates if the Action could be checked successfully or not.</returns>
+            public async Task<Dictionary<Action, Action.StatusEnum?>?> WaitForActions(List<Action> Actions)
+            {
+                List<Action> usableActions = new List<Action>();
+                Dictionary<Action, Action.StatusEnum?>? result = new Dictionary<Action, Action.StatusEnum?>();
+
+                foreach (Action action in Actions)
+                {
+                    var response = await GetActionAsync(action.Id);
+                    var check = response.Ok();
+
+                    if (check == null)
+                    {
+                        result.Add(action, null);
+                        Logger.Log(LogLevel.Warning, "Could not get one of the specified actions.", [action]);
+                        continue;
+                    }
+
+                    usableActions.Add(check.Action);
+                }
+
+                var tasks = usableActions.Select(async action =>
+                {
+                    var wait = await WaitForAction(action);
+                    return new { Action = action, Wait = wait };
+                });
+                var resultsArray = await Task.WhenAll(tasks);
+
+                foreach (var item in resultsArray)
+                {
+                    result.Add(item.Action, item.Wait);
+                }
+
+                return result;
+            }
     }
 }
+
