@@ -7,8 +7,11 @@
 #nullable enable
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace HCloudAPI.Clients
 {
@@ -56,4 +59,73 @@ namespace HCloudAPI.Clients
             return await tokens.Reader.ReadAsync(cancellation).ConfigureAwait(false);
         }
     }
+    
+    /// <summary>
+    /// Handles proactive rate-limit prevention.
+    /// </summary>
+    public class GradualRateLimitingHandler : DelegatingHandler
+    {
+        private readonly object _lock = new();
+        private int _remainingRequests = int.MaxValue;
+        private int _maxLimit = 3600;
+        private DateTimeOffset _resetTime = DateTimeOffset.MinValue;
+
+        protected override async Task<HttpResponseMessage> SendAsync(
+            HttpRequestMessage request, 
+            CancellationToken cancellationToken)
+        {
+            TimeSpan delay = TimeSpan.Zero;
+
+            lock (_lock)
+            {
+                if (_remainingRequests <= 0)
+                {
+                    var now = DateTimeOffset.UtcNow;
+                    if (now < _resetTime)
+                    {
+                        var totalRemainingTime = _resetTime - now;
+                        int missingRequests = _maxLimit; 
+                        double secondsPerRequest = totalRemainingTime.TotalSeconds / missingRequests;
+
+                        delay = TimeSpan.FromSeconds(Math.Max(1, secondsPerRequest));
+                    }
+                }
+            }
+
+            if (delay > TimeSpan.Zero)
+            {
+                await Task.Delay(delay, cancellationToken);
+            }
+
+            var response = await base.SendAsync(request, cancellationToken);
+            ExtractRateLimitHeaders(response);
+
+            return response;
+        }
+
+        private void ExtractRateLimitHeaders(HttpResponseMessage response)
+        {
+            lock (_lock)
+            {
+                if (response.Headers.TryGetValues("RateLimit-Limit", out var limitValues) &&
+                    int.TryParse(limitValues.FirstOrDefault(), out var limit))
+                {
+                    _maxLimit = limit;
+                }
+
+                if (response.Headers.TryGetValues("RateLimit-Remaining", out var remainingValues) &&
+                    int.TryParse(remainingValues.FirstOrDefault(), out var remaining))
+                {
+                    _remainingRequests = remaining;
+                }
+
+                if (response.Headers.TryGetValues("RateLimit-Reset", out var resetValues) &&
+                    long.TryParse(resetValues.FirstOrDefault(), out var resetUnixTime))
+                {
+                    _resetTime = DateTimeOffset.FromUnixTimeSeconds(resetUnixTime);
+                }
+            }
+        }
+    }
+
 }

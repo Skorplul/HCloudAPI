@@ -11,6 +11,7 @@ using System;
 using HCloudAPI.Clients;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Http;
 
 namespace HCloudAPI.Extensions
 {
@@ -26,8 +27,19 @@ namespace HCloudAPI.Extensions
         /// <param name="options"></param>
         public static IHostBuilder ConfigureApi(this IHostBuilder builder, Action<HostBuilderContext, HostConfiguration>? options = null)
         {
-            builder.ConfigureServices((context, services) => 
+            builder.ConfigureServices((context, services) =>
             {
+                services.AddSingleton<GradualRateLimitingHandler>();
+
+                services.ConfigureAll<HttpClientFactoryOptions>(options =>
+                {
+                    options.HttpMessageHandlerBuilderActions.Add(msgBuilder =>
+                    {
+                        var handler = msgBuilder.Services.GetRequiredService<GradualRateLimitingHandler>();
+                        msgBuilder.AdditionalHandlers.Insert(0, handler);
+                    });
+                });
+
                 HostConfiguration config = new HostConfiguration(services);
 
                 options?.Invoke(context, config);
