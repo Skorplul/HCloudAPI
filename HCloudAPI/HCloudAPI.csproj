@@ -11,7 +11,7 @@
     <Description>A library to easily use the Hetzner Cloud API in .NET Projects. You can find documentation here: https://skorplul.github.io/HCloudAPI/</Description>
     <Copyright>CC-BY-4.0 International</Copyright>
     <RootNamespace>HCloudAPI</RootNamespace>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HCloudAPI.xml</DocumentationFile>
     <PackageProjectUrl>https://skorplul.github.io/HCloudAPI/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Skorplul/HCloudAPI.git</RepositoryUrl>
