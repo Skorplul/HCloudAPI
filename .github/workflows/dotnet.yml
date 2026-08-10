@@ -11,17 +11,14 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
     strategy:  
       matrix:
         dotnet-version: [ '5.0.x', '6.0.x', '7.0.x', '8.0.x', '9.0.x', '10.0.x' ]
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -34,6 +31,24 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '10.0.x' 
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
     - name: Pack NuGet Package
       run: dotnet pack --configuration Release --output ./artifacts
       
