@@ -228,12 +228,8 @@ namespace HCloudAPI.Clients
                 return PrimaryIP.TypeEnumToJsonValue(primaryIPTypeEnum);
             if (obj is PrimaryIP.AssigneeTypeEnum primaryIPAssigneeTypeEnum)
                 return PrimaryIP.AssigneeTypeEnumToJsonValue(primaryIPAssigneeTypeEnum);
-            if (obj is PrimaryIPActionsAssignRequest.AssigneeTypeEnum primaryIPActionsAssignRequestAssigneeTypeEnum)
-                return PrimaryIPActionsAssignRequest.AssigneeTypeEnumToJsonValue(primaryIPActionsAssignRequestAssigneeTypeEnum);
             if (obj is PrimaryIPCreateRequest.TypeEnum primaryIPCreateRequestTypeEnum)
                 return PrimaryIPCreateRequest.TypeEnumToJsonValue(primaryIPCreateRequestTypeEnum);
-            if (obj is PrimaryIPCreateRequest.AssigneeTypeEnum primaryIPCreateRequestAssigneeTypeEnum)
-                return PrimaryIPCreateRequest.AssigneeTypeEnumToJsonValue(primaryIPCreateRequestAssigneeTypeEnum);
             if (obj is PrimaryZone.StatusEnum primaryZoneStatusEnum)
                 return PrimaryZone.StatusEnumToJsonValue(primaryZoneStatusEnum);
             if (obj is PrimaryZone.RegistrarEnum primaryZoneRegistrarEnum)

@@ -19,6 +19,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations;
 using HCloudAPI.Clients;
+using AssigneeTypeEnum = HCloudAPI.Model.PrimaryIP.AssigneeTypeEnum;
 
 namespace HCloudAPI.Model
 {
@@ -41,59 +42,6 @@ namespace HCloudAPI.Model
         }
 
         partial void OnCreated();
-
-        /// <summary>
-        /// Type of resource assigning the Primary IP to.
-        /// </summary>
-        /// <value>Type of resource assigning the Primary IP to.</value>
-        public enum AssigneeTypeEnum
-        {
-            /// <summary>
-            /// Enum Server for value: server
-            /// </summary>
-            Server = 1
-        }
-
-        /// <summary>
-        /// Returns a <see cref="AssigneeTypeEnum"/>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static AssigneeTypeEnum AssigneeTypeEnumFromString(string value)
-        {
-            if (value.Equals("server"))
-                return AssigneeTypeEnum.Server;
-
-            throw new NotImplementedException($"Could not convert value to type AssigneeTypeEnum: '{value}'");
-        }
-
-        /// <summary>
-        /// Returns a <see cref="AssigneeTypeEnum"/>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static AssigneeTypeEnum? AssigneeTypeEnumFromStringOrDefault(string value)
-        {
-            if (value.Equals("server"))
-                return AssigneeTypeEnum.Server;
-
-            return null;
-        }
-
-        /// <summary>
-        /// Converts the <see cref="AssigneeTypeEnum"/> to the json value
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
-        public static string AssigneeTypeEnumToJsonValue(AssigneeTypeEnum value)
-        {
-            if (value == AssigneeTypeEnum.Server)
-                return "server";
-
-            throw new NotImplementedException($"Value could not be handled: '{value}'");
-        }
 
         /// <summary>
         /// Type of resource assigning the Primary IP to.
@@ -175,7 +123,7 @@ namespace HCloudAPI.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<PrimaryIPActionsAssignRequest.AssigneeTypeEnum?> assigneeType = default;
+            Option<AssigneeTypeEnum?> assigneeType = default;
             Option<long?> assigneeId = default;
 
             while (utf8JsonReader.Read())
@@ -196,7 +144,7 @@ namespace HCloudAPI.Model
                         case "assignee_type":
                             string? assigneeTypeRawValue = utf8JsonReader.GetString();
                             if (assigneeTypeRawValue != null)
-                                assigneeType = new Option<PrimaryIPActionsAssignRequest.AssigneeTypeEnum?>(PrimaryIPActionsAssignRequest.AssigneeTypeEnumFromStringOrDefault(assigneeTypeRawValue));
+                                assigneeType = new Option<AssigneeTypeEnum?>(PrimaryIP.AssigneeTypeEnumFromStringOrDefault(assigneeTypeRawValue));
                             break;
                         case "assignee_id":
                             assigneeId = new Option<long?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (long?)null : utf8JsonReader.GetInt64());
@@ -246,7 +194,7 @@ namespace HCloudAPI.Model
         /// <exception cref="NotImplementedException"></exception>
         public void WriteProperties(Utf8JsonWriter writer, PrimaryIPActionsAssignRequest primaryIPActionsAssignRequest, JsonSerializerOptions jsonSerializerOptions)
         {
-            var assigneeTypeRawValue = PrimaryIPActionsAssignRequest.AssigneeTypeEnumToJsonValue(primaryIPActionsAssignRequest.AssigneeType);
+            var assigneeTypeRawValue = PrimaryIP.AssigneeTypeEnumToJsonValue(primaryIPActionsAssignRequest.AssigneeType);
             writer.WriteString("assignee_type", assigneeTypeRawValue);
             writer.WriteNumber("assignee_id", primaryIPActionsAssignRequest.AssigneeId);
         }

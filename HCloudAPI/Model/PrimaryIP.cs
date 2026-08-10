@@ -148,7 +148,12 @@ namespace HCloudAPI.Model
             /// <summary>
             /// Enum Server for value: server
             /// </summary>
-            Server = 1
+            Server = 1,
+            
+            /// <summary>
+            /// Enum Unassigned for value: unassigned
+            /// </summary>
+            Unassigned = 2
         }
 
         /// <summary>
@@ -161,6 +166,8 @@ namespace HCloudAPI.Model
         {
             if (value.Equals("server"))
                 return AssigneeTypeEnum.Server;
+            if (value.Equals("unassigned"))
+                return AssigneeTypeEnum.Unassigned;
 
             throw new NotImplementedException($"Could not convert value to type AssigneeTypeEnum: '{value}'");
         }
@@ -174,6 +181,8 @@ namespace HCloudAPI.Model
         {
             if (value.Equals("server"))
                 return AssigneeTypeEnum.Server;
+            if (value.Equals("unassigned"))
+                return AssigneeTypeEnum.Unassigned;
 
             return null;
         }
@@ -188,6 +197,8 @@ namespace HCloudAPI.Model
         {
             if (value == AssigneeTypeEnum.Server)
                 return "server";
+            if (value == AssigneeTypeEnum.Unassigned)
+                return "unassigned";
 
             throw new NotImplementedException($"Value could not be handled: '{value}'");
         }
