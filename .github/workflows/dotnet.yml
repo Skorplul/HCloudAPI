@@ -60,3 +60,9 @@ jobs:
         
     - name: NuGet push
       run: dotnet nuget push artifacts/*.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+
+    - name: add dotnet source github
+      run: dotnet nuget add source --username Skorplul --password ${{ secrets.PACKAGES_KEY }} --name github "https://nuget.pkg.github.com/Skorplul/index.json"
+
+    - name: push github
+      run: dotnet nuget push artifacts/*.nupkg --api-key ${{ secrets.PACKAGES_KEY }} --source "github"
