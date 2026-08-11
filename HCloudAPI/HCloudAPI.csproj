@@ -16,7 +16,7 @@
     <PackageProjectUrl>https://skorplul.github.io/HCloudAPI/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Skorplul/HCloudAPI.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Fixed repo links</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/Skorplul/HCloudAPI/releases/</PackageReleaseNotes>
     <Nullable>enable</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
