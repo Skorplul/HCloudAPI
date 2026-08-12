@@ -761,9 +761,7 @@ namespace HCloudAPI.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/zones/{id_or_name}/actions/change_primary_nameservers");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bid_or_name%7D", Uri.EscapeDataString(idOrName.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (changeZonePrimaryNameserversRequest as object) is FileParameter fileParameterLocalVar
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(fileParameterLocalVar.Content)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(changeZonePrimaryNameserversRequest, _jsonSerializerOptions));
+                    httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(changeZonePrimaryNameserversRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
@@ -1126,9 +1124,7 @@ namespace HCloudAPI.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/zones/{id_or_name}/actions/change_protection");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bid_or_name%7D", Uri.EscapeDataString(idOrName.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (changeZoneProtectionRequest as object) is FileParameter fileParameterLocalVar
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(fileParameterLocalVar.Content)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(changeZoneProtectionRequest, _jsonSerializerOptions));
+                    httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(changeZoneProtectionRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
@@ -1491,9 +1487,7 @@ namespace HCloudAPI.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/zones/{id_or_name}/actions/change_ttl");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bid_or_name%7D", Uri.EscapeDataString(idOrName.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (changeZoneTtlRequest as object) is FileParameter fileParameterLocalVar
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(fileParameterLocalVar.Content)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(changeZoneTtlRequest, _jsonSerializerOptions));
+                    httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(changeZoneTtlRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
@@ -2534,9 +2528,7 @@ namespace HCloudAPI.Api
                         : string.Concat(HttpClient.BaseAddress.AbsolutePath.TrimEnd('/'), "/zones/{id_or_name}/actions/import_zonefile");
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bid_or_name%7D", Uri.EscapeDataString(idOrName.ToString()));
 
-                    httpRequestMessageLocalVar.Content = (importZoneZonefileRequest as object) is FileParameter fileParameterLocalVar
-                        ? httpRequestMessageLocalVar.Content = new StreamContent(fileParameterLocalVar.Content)
-                        : httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(importZoneZonefileRequest, _jsonSerializerOptions));
+                    httpRequestMessageLocalVar.Content = new StringContent(JsonSerializer.Serialize(importZoneZonefileRequest, _jsonSerializerOptions));
 
                     List<TokenBase> tokenBaseLocalVars = new List<TokenBase>();
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
